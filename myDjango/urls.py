@@ -18,6 +18,10 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+    path('', views.page_index_view),
     path('admin/', admin.site.urls),
-    path('page/2021/', views.page_2021_view)
+    path('page/2021/', views.page_2021_view),
+    # path转换器，匹配page/1、page/2、page/3等等
+    path('page/<int:pageNum>', views.page_N_view),
+
 ]
