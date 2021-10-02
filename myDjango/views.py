@@ -49,5 +49,9 @@ def test_html_view(request):
 
     #开始：模版的加载方式二
     from django.shortcuts import render
-    return render(request, "test_html.html")
+    dic = {
+        'username': 'zhangsan',
+        'age': 20
+    }
+    return render(request, "test_html.html", dic)
     #结束：模版的加载方式二
