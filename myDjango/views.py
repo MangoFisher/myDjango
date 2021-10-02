@@ -36,3 +36,18 @@ def test_get_post_view(request):
     else:
         pass
     return HttpResponse("in test_get_post_view")
+
+
+#测试django的模版功能
+def test_html_view(request):
+    #开始：模版的加载方式一
+    # from django.template import loader
+    # t = loader.get_template("test_html.html")
+    # html = t.render()
+    # return HttpResponse(html)
+    #结束：模版的加载方式一
+
+    #开始：模版的加载方式二
+    from django.shortcuts import render
+    return render(request, "test_html.html")
+    #结束：模版的加载方式二
