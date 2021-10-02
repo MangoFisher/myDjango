@@ -19,3 +19,9 @@ def page_N_view(request, pageNum):
 def re_view(request, x, op, y):
     html = "<h1>这是re_path页面</h1>"
     return HttpResponse(html)
+
+
+def request_test_view(request):
+    print('path info is', request.path_info)
+    print('method is', request.method)
+    return HttpResponse("test request ok!")
