@@ -25,3 +25,14 @@ def request_test_view(request):
     print('path info is', request.path_info)
     print('method is', request.method)
     return HttpResponse("test request ok!")
+
+
+def test_get_post_view(request):
+    if request.method == 'GET':
+        print(request.GET['a'])
+        print(request.GET.get('c', 'no c exist!!!'))
+    elif request.method == 'POST':
+        pass
+    else:
+        pass
+    return HttpResponse("in test_get_post_view")

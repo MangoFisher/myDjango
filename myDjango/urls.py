@@ -24,6 +24,7 @@ urlpatterns = [
     # path转换器，匹配page/1、page/2、page/3等等
     path('page/<int:pageNum>', views.page_N_view),
     path('request', views.request_test_view),
+    path('test_get_or_post', views.test_get_post_view),
     #匹配http://0.0.0.0:8000/20/mul/40
     #不可匹配http://0.0.0.0:8000/200/mul/400
     re_path(r'^(?P<x>\d{1,2})/(?P<op>\w+)/(?P<y>\d{1,2})$', views.re_view)
